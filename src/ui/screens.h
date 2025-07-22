@@ -12,9 +12,6 @@ typedef struct _objects_t {
     lv_obj_t *home_screen;
     lv_obj_t *logger_screen;
     lv_obj_t *obj0;
-    lv_obj_t *logger_button;
-    lv_obj_t *autonation_button;
-    lv_obj_t *diagnostic_button;
     lv_obj_t *obj1;
     lv_obj_t *obj2;
     lv_obj_t *obj3;
@@ -39,6 +36,9 @@ typedef struct _objects_t {
     lv_obj_t *obj22;
     lv_obj_t *obj23;
     lv_obj_t *obj24;
+    lv_obj_t *obj25;
+    lv_obj_t *obj26;
+    lv_obj_t *obj27;
 } objects_t;
 
 extern objects_t objects;
