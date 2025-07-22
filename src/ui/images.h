@@ -12,6 +12,7 @@ extern const lv_img_dsc_t img_logo;
 extern const lv_img_dsc_t img_logger;
 extern const lv_img_dsc_t img_automation;
 extern const lv_img_dsc_t img_diagnostics;
+extern const lv_img_dsc_t img_home;
 
 #ifndef EXT_IMG_DESC_T
 #define EXT_IMG_DESC_T
@@ -21,7 +22,7 @@ typedef struct _ext_img_desc_t {
 } ext_img_desc_t;
 #endif
 
-extern const ext_img_desc_t images[5];
+extern const ext_img_desc_t images[6];
 
 
 #ifdef __cplusplus

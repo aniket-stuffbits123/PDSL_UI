@@ -7,6 +7,7 @@
 extern "C" {
 #endif
 
+extern void action_load_logger_screen(lv_event_t * e);
 
 
 #ifdef __cplusplus
