@@ -37,8 +37,6 @@ typedef struct _objects_t {
     lv_obj_t *obj23;
     lv_obj_t *obj24;
     lv_obj_t *obj25;
-    lv_obj_t *obj26;
-    lv_obj_t *obj27;
 } objects_t;
 
 extern objects_t objects;

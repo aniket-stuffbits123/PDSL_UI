@@ -1,10 +1,7 @@
 #include "images.h"
 
-const ext_img_desc_t images[6] = {
-    { "Settings_Icon", &img_settings_icon },
+const ext_img_desc_t images[3] = {
     { "Logo", &img_logo },
-    { "logger", &img_logger },
-    { "automation", &img_automation },
-    { "diagnostics", &img_diagnostics },
-    { "home", &img_home },
+    { "settings_icon", &img_settings_icon },
+    { "home_icon", &img_home_icon },
 };
