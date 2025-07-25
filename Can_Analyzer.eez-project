@@ -104,7 +104,32 @@
   },
   "variables": {
     "objID": "c6c71e16-53e1-217f-d03b-cef56c6b037a",
-    "globalVariables": [],
+    "globalVariables": [
+      {
+        "objID": "885c75be-e35f-42ac-fa86-013842d1a252",
+        "name": "isLoggerStart",
+        "type": "boolean",
+        "defaultValue": "false",
+        "persistent": false,
+        "native": false
+      },
+      {
+        "objID": "65ecaa34-fdc6-4ff1-9166-21ff8e8de8b4",
+        "name": "channelSelect",
+        "type": "integer",
+        "defaultValue": "0",
+        "persistent": false,
+        "native": false
+      },
+      {
+        "objID": "2101898b-24a7-4fed-bbd1-eec99fd8e8a4",
+        "name": "viewLogs",
+        "type": "integer",
+        "defaultValue": "0",
+        "persistent": false,
+        "native": false
+      }
+    ],
     "structures": [],
     "enums": []
   },
@@ -124,6 +149,30 @@
       "localVariables": [],
       "userProperties": [],
       "name": "load_HomeScreen"
+    },
+    {
+      "objID": "8128d20a-af31-4e18-c863-c14d38adfc6a",
+      "components": [],
+      "connectionLines": [],
+      "localVariables": [],
+      "userProperties": [],
+      "name": "logger_StartStop"
+    },
+    {
+      "objID": "326c18a4-6d19-46cf-ad22-2e90606558d2",
+      "components": [],
+      "connectionLines": [],
+      "localVariables": [],
+      "userProperties": [],
+      "name": "channel_Select"
+    },
+    {
+      "objID": "0c97318d-31f1-4fa4-97da-d9cee093e5e5",
+      "components": [],
+      "connectionLines": [],
+      "localVariables": [],
+      "userProperties": [],
+      "name": "view_logs"
     }
   ],
   "userPages": [
@@ -2166,7 +2215,16 @@
                 "childStyles": []
               },
               "timeline": [],
-              "eventHandlers": [],
+              "eventHandlers": [
+                {
+                  "objID": "091e16ce-bf77-4be3-b5e6-ee8a44b2a224",
+                  "eventName": "PRESSED",
+                  "handlerType": "action",
+                  "action": "logger_StartStop",
+                  "userData": 0
+                }
+              ],
+              "identifier": "CanLogStartStopButton",
               "leftUnit": "px",
               "topUnit": "px",
               "widthUnit": "px",
@@ -2263,7 +2321,16 @@
                 "childStyles": []
               },
               "timeline": [],
-              "eventHandlers": [],
+              "eventHandlers": [
+                {
+                  "objID": "288f6c2e-2725-4ff3-e0ac-3e818cb75a82",
+                  "eventName": "PRESSED",
+                  "handlerType": "action",
+                  "action": "channel_Select",
+                  "userData": 0
+                }
+              ],
+              "identifier": "channelSelectCANLogger",
               "leftUnit": "px",
               "topUnit": "px",
               "widthUnit": "px",
@@ -2360,7 +2427,16 @@
                 "childStyles": []
               },
               "timeline": [],
-              "eventHandlers": [],
+              "eventHandlers": [
+                {
+                  "objID": "266ae907-2ac8-46b7-e019-ff3322df485f",
+                  "eventName": "PRESSED",
+                  "handlerType": "action",
+                  "action": "view_logs",
+                  "userData": 0
+                }
+              ],
+              "identifier": "viewLoggsCANLoggs",
               "leftUnit": "px",
               "topUnit": "px",
               "widthUnit": "px",

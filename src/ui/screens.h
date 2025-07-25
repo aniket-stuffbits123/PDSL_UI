@@ -32,11 +32,11 @@ typedef struct _objects_t {
     lv_obj_t *obj18;
     lv_obj_t *obj19;
     lv_obj_t *obj20;
+    lv_obj_t *can_log_start_stop_button;
+    lv_obj_t *channel_select_can_logger;
+    lv_obj_t *view_loggs_can_loggs;
     lv_obj_t *obj21;
     lv_obj_t *obj22;
-    lv_obj_t *obj23;
-    lv_obj_t *obj24;
-    lv_obj_t *obj25;
 } objects_t;
 
 extern objects_t objects;

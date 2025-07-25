@@ -370,10 +370,12 @@ void create_screen_logger_screen() {
             lv_led_set_brightness(obj, 255);
         }
         {
+            // CanLogStartStopButton
             lv_obj_t *obj = lv_button_create(parent_obj);
-            objects.obj21 = obj;
+            objects.can_log_start_stop_button = obj;
             lv_obj_set_pos(obj, 11, 73);
             lv_obj_set_size(obj, 140, 50);
+            lv_obj_add_event_cb(obj, action_logger_start_stop, LV_EVENT_PRESSED, (void *)0);
             lv_obj_set_style_bg_color(obj, lv_color_hex(0xff0b994a), LV_PART_MAIN | LV_STATE_DEFAULT);
             {
                 lv_obj_t *parent_obj = obj;
@@ -388,10 +390,12 @@ void create_screen_logger_screen() {
             }
         }
         {
+            // channelSelectCANLogger
             lv_obj_t *obj = lv_button_create(parent_obj);
-            objects.obj22 = obj;
+            objects.channel_select_can_logger = obj;
             lv_obj_set_pos(obj, 170, 73);
             lv_obj_set_size(obj, 140, 50);
+            lv_obj_add_event_cb(obj, action_channel_select, LV_EVENT_PRESSED, (void *)0);
             lv_obj_set_style_bg_color(obj, lv_color_hex(0xff0b994a), LV_PART_MAIN | LV_STATE_DEFAULT);
             {
                 lv_obj_t *parent_obj = obj;
@@ -406,10 +410,12 @@ void create_screen_logger_screen() {
             }
         }
         {
+            // viewLoggsCANLoggs
             lv_obj_t *obj = lv_button_create(parent_obj);
-            objects.obj23 = obj;
+            objects.view_loggs_can_loggs = obj;
             lv_obj_set_pos(obj, 328, 73);
             lv_obj_set_size(obj, 140, 50);
+            lv_obj_add_event_cb(obj, action_view_logs, LV_EVENT_PRESSED, (void *)0);
             lv_obj_set_style_bg_color(obj, lv_color_hex(0xff0b994a), LV_PART_MAIN | LV_STATE_DEFAULT);
             {
                 lv_obj_t *parent_obj = obj;
@@ -425,7 +431,7 @@ void create_screen_logger_screen() {
         }
         {
             lv_obj_t *obj = lv_label_create(parent_obj);
-            objects.obj24 = obj;
+            objects.obj21 = obj;
             lv_obj_set_pos(obj, 11, 139);
             lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
             lv_obj_set_style_text_font(obj, &lv_font_montserrat_18, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -434,7 +440,7 @@ void create_screen_logger_screen() {
         }
         {
             lv_obj_t *obj = lv_textarea_create(parent_obj);
-            objects.obj25 = obj;
+            objects.obj22 = obj;
             lv_obj_set_pos(obj, 99, 139);
             lv_obj_set_size(obj, 369, 108);
             lv_textarea_set_max_length(obj, 128);

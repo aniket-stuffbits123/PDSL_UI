@@ -53,26 +53,26 @@
               },
               {
                 "type": "tab",
-                "id": "themes",
-                "name": "Themes",
-                "component": "themesSideView",
-                "enableClose": false,
-                "icon": "svg:palette"
-              },
-              {
-                "type": "tab",
                 "id": "lvgl-groups",
                 "name": "Groups",
                 "component": "lvgl-groups",
                 "enableClose": false,
                 "icon": "material:view_compact"
+              },
+              {
+                "type": "tab",
+                "id": "themes",
+                "name": "Themes",
+                "component": "themesSideView",
+                "enableClose": false,
+                "icon": "svg:palette"
               }
             ]
           },
           {
             "type": "border",
             "selected": 1,
-            "size": 193.15625,
+            "size": 127.15625,
             "location": "bottom",
             "children": [
               {
@@ -1051,8 +1051,8 @@
       },
       "transform": {
         "translate": {
-          "x": -120,
-          "y": -80
+          "x": -240,
+          "y": -160
         },
         "scale": 0.5
       },
