@@ -41,7 +41,7 @@
         {
           "objID": "e8fa876c-8113-4982-97fb-954d8ef4c889",
           "fileName": "actions.h",
-          "template": "#ifndef EEZ_LVGL_UI_EVENTS_H\r\n#define EEZ_LVGL_UI_EVENTS_H\r\n\r\n//${eez-studio LVGL_INCLUDE}\r\n\r\n#ifdef __cplusplus\r\nextern \"C\" {\r\n#endif\r\n\r\n//${eez-studio LVGL_ACTIONS_DECL}\r\n\r\n#ifdef __cplusplus\r\n}\r\n#endif\r\n\r\n#endif /*EEZ_LVGL_UI_EVENTS_H*/"
+          "template": "#ifndef EEZ_LVGL_UI_EVENTS_H\r\n#define EEZ_LVGL_UI_EVENTS_H\r\n\r\n//${eez-studio LVGL_INCLUDE}\r\n\r\n#ifdef __cplusplus\r\nextern \"C\" {\r\n#endif\r\n\r\nextern void timer_cb_load_home_screen(lv_timer_t * timer);\r\n//${eez-studio LVGL_ACTIONS_DECL}\r\n\r\n#ifdef __cplusplus\r\n}\r\n#endif\r\n\r\n#endif /*EEZ_LVGL_UI_EVENTS_H*/"
         },
         {
           "objID": "d4f95758-9ae6-476b-9925-5bbbcd4e21ff",
@@ -86,15 +86,15 @@
         {
           "objID": "b496009f-11d0-43a6-ccf2-36f65d85a307",
           "fileName": "ui.c",
-          "template": "#if defined(EEZ_FOR_LVGL)\n#include <eez/core/vars.h>\n#endif\n\n#include \"ui.h\"\n#include \"screens.h\"\n#include \"images.h\"\n#include \"actions.h\"\n#include \"vars.h\"\n\n//${eez-studio GUI_ASSETS_DEF}\n\n//${eez-studio LVGL_NATIVE_VARS_TABLE_DEF}\n\n//${eez-studio LVGL_ACTIONS_ARRAY_DEF}\n\n#if defined(EEZ_FOR_LVGL)\n\nvoid ui_init() {\n    eez_flow_init(assets, sizeof(assets), (lv_obj_t **)&objects, sizeof(objects), images, sizeof(images), actions);\n}\n\nvoid ui_tick() {\n    eez_flow_tick();\n    tick_screen(g_currentScreen);\n}\n\n#else\n\n#include <string.h>\n\nstatic int16_t currentScreen = -1;\n\nstatic lv_obj_t *getLvglObjectFromIndex(int32_t index) {\n    if (index == -1) {\n        return 0;\n    }\n    return ((lv_obj_t **)&objects)[index];\n}\n\nvoid loadScreen(enum ScreensEnum screenId) {\n    currentScreen = screenId - 1;\n    lv_obj_t *screen = getLvglObjectFromIndex(currentScreen);\n    lv_scr_load_anim(screen, LV_SCR_LOAD_ANIM_FADE_IN, 200, 0, false);\n}\n\nvoid ui_init() {\n    create_screens();\n//${eez-studio LVGL_LOAD_FIRST_SCREEN}\n}\n\nvoid ui_tick() {\n    tick_screen(currentScreen);\n}\n\n#endif\n"
+          "template": "#if defined(EEZ_FOR_LVGL)\n#include <eez/core/vars.h>\n#endif\n\n#include \"ui.h\"\n#include \"screens.h\"\n#include \"images.h\"\n#include \"actions.h\"\n#include \"vars.h\"\n\n//${eez-studio GUI_ASSETS_DEF}\n\n//${eez-studio LVGL_NATIVE_VARS_TABLE_DEF}\n\n//${eez-studio LVGL_ACTIONS_ARRAY_DEF}\n\n#if defined(EEZ_FOR_LVGL)\n\nvoid ui_init() {\n    eez_flow_init(assets, sizeof(assets), (lv_obj_t **)&objects, sizeof(objects), images, sizeof(images), actions);\n}\n\nvoid ui_tick() {\n    eez_flow_tick();\n    tick_screen(g_currentScreen);\n}\n\n#else\n\n#include <string.h>\n\nstatic int16_t currentScreen = -1;\n\nstatic lv_obj_t *getLvglObjectFromIndex(int32_t index) {\n    if (index == -1) {\n        return 0;\n    }\n    return ((lv_obj_t **)&objects)[index];\n}\n\nvoid loadScreen(enum ScreensEnum screenId) {\n    currentScreen = screenId - 1;\n    lv_obj_t *screen = getLvglObjectFromIndex(currentScreen);\n    lv_scr_load(screen);\n}\n\nvoid ui_init() {\n    create_screens();\n    \n        // Create one-shot timer to load home screen after 3 sec\n    lv_timer_t *timer = lv_timer_create(timer_cb_load_home_screen, 3000, NULL);\n    lv_timer_set_repeat_count(timer, 1);\n//${eez-studio LVGL_LOAD_FIRST_SCREEN}\n}\n\nvoid ui_tick() {\n    tick_screen(currentScreen);\n}\n\n#endif\n"
         }
       ],
-      "destinationFolder": "src\\ui",
+      "destinationFolder": "..\\..\\FW\\PRJ002-FwDev-4ChCANTool_new_project\\source\\APP\\ui",
       "separateFolderForImagesAndFonts": true,
       "imageExportMode": "source",
       "fontExportMode": "source",
       "fileSystemPath": "",
-      "lvglInclude": "lvgl/lvgl.h",
+      "lvglInclude": "lvgl.h",
       "screensLifetimeSupport": false,
       "generateSourceCodeForEezFramework": false,
       "compressFlowDefinition": false,
@@ -104,32 +104,7 @@
   },
   "variables": {
     "objID": "c6c71e16-53e1-217f-d03b-cef56c6b037a",
-    "globalVariables": [
-      {
-        "objID": "885c75be-e35f-42ac-fa86-013842d1a252",
-        "name": "isLoggerStart",
-        "type": "boolean",
-        "defaultValue": "false",
-        "persistent": false,
-        "native": false
-      },
-      {
-        "objID": "65ecaa34-fdc6-4ff1-9166-21ff8e8de8b4",
-        "name": "channelSelect",
-        "type": "integer",
-        "defaultValue": "0",
-        "persistent": false,
-        "native": false
-      },
-      {
-        "objID": "2101898b-24a7-4fed-bbd1-eec99fd8e8a4",
-        "name": "viewLogs",
-        "type": "integer",
-        "defaultValue": "0",
-        "persistent": false,
-        "native": false
-      }
-    ],
+    "globalVariables": [],
     "structures": [],
     "enums": []
   },
@@ -149,30 +124,6 @@
       "localVariables": [],
       "userProperties": [],
       "name": "load_HomeScreen"
-    },
-    {
-      "objID": "8128d20a-af31-4e18-c863-c14d38adfc6a",
-      "components": [],
-      "connectionLines": [],
-      "localVariables": [],
-      "userProperties": [],
-      "name": "logger_StartStop"
-    },
-    {
-      "objID": "326c18a4-6d19-46cf-ad22-2e90606558d2",
-      "components": [],
-      "connectionLines": [],
-      "localVariables": [],
-      "userProperties": [],
-      "name": "channel_Select"
-    },
-    {
-      "objID": "0c97318d-31f1-4fa4-97da-d9cee093e5e5",
-      "components": [],
-      "connectionLines": [],
-      "localVariables": [],
-      "userProperties": [],
-      "name": "view_logs"
     }
   ],
   "userPages": [
@@ -359,7 +310,7 @@
               "type": "LVGLLabelWidget",
               "left": 368,
               "top": 18,
-              "width": 99,
+              "width": 91,
               "height": 24,
               "customInputs": [],
               "customOutputs": [],
@@ -371,6 +322,7 @@
               },
               "timeline": [],
               "eventHandlers": [],
+              "identifier": "label_Time",
               "leftUnit": "px",
               "topUnit": "px",
               "widthUnit": "content",
@@ -398,7 +350,7 @@
               },
               "group": "",
               "groupIndex": 0,
-              "text": "10:30 AM",
+              "text": "10:30:00",
               "textType": "literal",
               "longMode": "WRAP",
               "recolor": false
@@ -2215,16 +2167,7 @@
                 "childStyles": []
               },
               "timeline": [],
-              "eventHandlers": [
-                {
-                  "objID": "091e16ce-bf77-4be3-b5e6-ee8a44b2a224",
-                  "eventName": "PRESSED",
-                  "handlerType": "action",
-                  "action": "logger_StartStop",
-                  "userData": 0
-                }
-              ],
-              "identifier": "CanLogStartStopButton",
+              "eventHandlers": [],
               "leftUnit": "px",
               "topUnit": "px",
               "widthUnit": "px",
@@ -2321,16 +2264,7 @@
                 "childStyles": []
               },
               "timeline": [],
-              "eventHandlers": [
-                {
-                  "objID": "288f6c2e-2725-4ff3-e0ac-3e818cb75a82",
-                  "eventName": "PRESSED",
-                  "handlerType": "action",
-                  "action": "channel_Select",
-                  "userData": 0
-                }
-              ],
-              "identifier": "channelSelectCANLogger",
+              "eventHandlers": [],
               "leftUnit": "px",
               "topUnit": "px",
               "widthUnit": "px",
@@ -2427,16 +2361,7 @@
                 "childStyles": []
               },
               "timeline": [],
-              "eventHandlers": [
-                {
-                  "objID": "266ae907-2ac8-46b7-e019-ff3322df485f",
-                  "eventName": "PRESSED",
-                  "handlerType": "action",
-                  "action": "view_logs",
-                  "userData": 0
-                }
-              ],
-              "identifier": "viewLoggsCANLoggs",
+              "eventHandlers": [],
               "leftUnit": "px",
               "topUnit": "px",
               "widthUnit": "px",

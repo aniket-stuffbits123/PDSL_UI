@@ -53,26 +53,26 @@
               },
               {
                 "type": "tab",
-                "id": "lvgl-groups",
-                "name": "Groups",
-                "component": "lvgl-groups",
-                "enableClose": false,
-                "icon": "material:view_compact"
-              },
-              {
-                "type": "tab",
                 "id": "themes",
                 "name": "Themes",
                 "component": "themesSideView",
                 "enableClose": false,
                 "icon": "svg:palette"
+              },
+              {
+                "type": "tab",
+                "id": "lvgl-groups",
+                "name": "Groups",
+                "component": "lvgl-groups",
+                "enableClose": false,
+                "icon": "material:view_compact"
               }
             ]
           },
           {
             "type": "border",
-            "selected": 1,
-            "size": 127.15625,
+            "selected": 0,
+            "size": 193.15625,
             "location": "bottom",
             "children": [
               {
@@ -119,12 +119,12 @@
             {
               "type": "row",
               "id": "#846446d6-968a-4c93-9cfc-758478c59d79",
-              "weight": 17.818181818181817,
+              "weight": 10.057308993687888,
               "children": [
                 {
                   "type": "tabset",
                   "id": "#4d896cbe-15fc-4341-bc0f-5acbf61fa7f7",
-                  "weight": 2.9729729729729732,
+                  "weight": 0.5633001422475107,
                   "enableClose": false,
                   "children": [
                     {
@@ -156,7 +156,7 @@
                 {
                   "type": "tabset",
                   "id": "#3e182baf-56e7-4a3e-91c5-8b2edd914f09",
-                  "weight": 0,
+                  "weight": 2.4096728307254622,
                   "enableClose": false,
                   "children": [
                     {
@@ -190,14 +190,13 @@
             {
               "type": "tabset",
               "id": "EDITORS",
-              "weight": 43.50266787476089,
-              "selected": 1,
+              "weight": 73.6782938467042,
               "enableDeleteWhenEmpty": false,
               "enableClose": false,
               "children": [
                 {
                   "type": "tab",
-                  "id": "#30cd92dc-92b9-4231-8059-bb9903161dc9",
+                  "id": "#1bf2e596-f447-434d-8159-ab3e9fe29f3e",
                   "name": "Settings",
                   "component": "editor",
                   "config": {
@@ -224,7 +223,7 @@
             {
               "type": "row",
               "id": "#3f79ce1e-5ec5-4e7a-93da-8ed9bc481f79",
-              "weight": 38.67915030705728,
+              "weight": 16.264397159607867,
               "children": [
                 {
                   "type": "tabset",
@@ -1051,8 +1050,8 @@
       },
       "transform": {
         "translate": {
-          "x": -240,
-          "y": -160
+          "x": -120,
+          "y": -80
         },
         "scale": 0.5
       },
