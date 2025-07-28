@@ -1,11 +1,12 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[Can_Analyzer.eez-project]:/userPages/0",
-    "selectedActionObject": "[Can_Analyzer.eez-project]:/actions/0",
-    "selectedFontObject": "[Can_Analyzer.eez-project]:/fonts/3",
-    "selectedGlyphObject": "[Can_Analyzer.eez-project]:/fonts/-1/glyphs/13",
+    "selectedUserPageObject": "[Can_Analyzer.eez-project]:/userPages/3",
+    "selectedGlobalVariableObject": "[Can_Analyzer.eez-project]:/variables/globalVariables/0",
+    "selectedFontObject": "[Can_Analyzer.eez-project]:/fonts/0",
     "selectedBitmapObject": "[Can_Analyzer.eez-project]:/bitmaps/13",
-    "subnavigationSelectedItems": {}
+    "subnavigationSelectedItems": {
+      "variables-tab/sub-navigation/selected-item": "Global"
+    }
   },
   "layoutModel": {
     "rootEditor": {
@@ -25,8 +26,8 @@
           },
           {
             "type": "border",
-            "selected": 2,
-            "size": 137.5,
+            "selected": 1,
+            "size": 356.5,
             "location": "right",
             "children": [
               {
@@ -158,7 +159,7 @@
                 {
                   "type": "tabset",
                   "id": "#3e182baf-56e7-4a3e-91c5-8b2edd914f09",
-                  "weight": 2.1486087857769265,
+                  "weight": 1.238759147003208,
                   "enableClose": false,
                   "children": [
                     {
@@ -174,7 +175,7 @@
                 {
                   "type": "tabset",
                   "id": "#903cbce9-311b-469d-b32f-30222b647558",
-                  "weight": 0.02702702702702703,
+                  "weight": 0.9368766658007457,
                   "enableClose": false,
                   "children": [
                     {
@@ -192,41 +193,18 @@
             {
               "type": "tabset",
               "id": "EDITORS",
-              "weight": 48.80382373588849,
+              "weight": 33.204823861347776,
               "enableDeleteWhenEmpty": false,
               "enableClose": false,
               "children": [
                 {
                   "type": "tab",
-                  "id": "#4acac96f-6916-4898-a8f8-6ce4a8e0cf90",
+                  "id": "#a192044d-7590-4ce7-a2fb-ff0b0608c79c",
                   "name": "CAN",
                   "component": "editor",
                   "config": {
-                    "objectPath": "[Can_Analyzer.eez-project]:/userPages/0",
+                    "objectPath": "[Can_Analyzer.eez-project]:/userPages/3",
                     "permanent": false
-                  },
-                  "icon": "svg:page"
-                },
-                {
-                  "type": "tab",
-                  "id": "#1bf2e596-f447-434d-8159-ab3e9fe29f3e",
-                  "name": "Settings",
-                  "component": "editor",
-                  "config": {
-                    "objectPath": "[Can_Analyzer.eez-project]:/settings",
-                    "subObjectPath": "[Can_Analyzer.eez-project]:/settings",
-                    "permanent": false
-                  },
-                  "icon": "material:settings"
-                },
-                {
-                  "type": "tab",
-                  "id": "#be8f100f-7738-4c23-8a2b-867503bab1e9",
-                  "name": "Home",
-                  "component": "editor",
-                  "config": {
-                    "objectPath": "[Can_Analyzer.eez-project]:/userPages/1",
-                    "permanent": true
                   },
                   "icon": "svg:page"
                 }
@@ -236,12 +214,12 @@
             {
               "type": "row",
               "id": "#3f79ce1e-5ec5-4e7a-93da-8ed9bc481f79",
-              "weight": 31.479522669469198,
+              "weight": 47.078522544009914,
               "children": [
                 {
                   "type": "tabset",
                   "id": "#378779e8-76c5-4f3f-bca8-39a210768f68",
-                  "weight": 2.1403162055335967,
+                  "weight": 1.8732718894009217,
                   "children": [
                     {
                       "type": "tab",
@@ -256,7 +234,7 @@
                 {
                   "type": "tabset",
                   "id": "#d4986128-23e7-4ded-bd18-dc8dc206c04f",
-                  "weight": 0.8596837944664032,
+                  "weight": 1.1267281105990783,
                   "children": [
                     {
                       "type": "tab",
@@ -616,6 +594,7 @@
             {
               "type": "tabset",
               "id": "#e1be9bcd-c168-455e-82cb-0a85579db83f",
+              "weight": 200,
               "enableDrop": false,
               "enableDrag": false,
               "enableClose": false,
@@ -633,6 +612,7 @@
             {
               "type": "tabset",
               "id": "#a8c6047c-a949-4680-ae4e-a41a98549be7",
+              "weight": 0,
               "enableDrop": false,
               "enableDrag": false,
               "enableClose": false,
@@ -1013,14 +993,7 @@
     "[Can_Analyzer.eez-project]:/userPages/0[flow-state]": {
       "selection": {
         "0": {
-          "0": {
-            "0": {},
-            "1": {}
-          },
-          "1": {},
-          "2": {},
-          "4": {},
-          "9": {}
+          "0": {}
         }
       },
       "transform": {
@@ -1040,11 +1013,12 @@
     "[Can_Analyzer.eez-project]:/userPages/2[flow-state]": {
       "selection": {
         "0": {
-          "0": {},
-          "2": {},
-          "8": {
-            "$selected": true
-          }
+          "0": {
+            "0": {},
+            "1": {}
+          },
+          "1": {},
+          "2": {}
         }
       },
       "transform": {
@@ -1064,7 +1038,8 @@
     "[Can_Analyzer.eez-project]:/userPages/1[flow-state]": {
       "selection": {
         "0": {
-          "0": {}
+          "0": {},
+          "4": {}
         }
       },
       "transform": {
@@ -1089,9 +1064,8 @@
             "1": {}
           },
           "1": {},
-          "2": {
-            "$selected": true
-          }
+          "2": {},
+          "9": {}
         }
       },
       "transform": {
@@ -1140,7 +1114,8 @@
   "lvglPart": "MAIN",
   "lvglState": "DEFAULT",
   "lvglExpandedPropertiesGroup": [
-    "BACKGROUND"
+    "BACKGROUND",
+    "TEXT"
   ],
   "showInactiveFlowsInDebugger": true,
   "globalFlowZoom": true,
