@@ -112,6 +112,14 @@
         "defaultValue": "false",
         "persistent": false,
         "native": false
+      },
+      {
+        "objID": "456e0483-cc29-41ed-d5de-7dcaf200455d",
+        "name": "is_canlogging_enabled",
+        "type": "boolean",
+        "defaultValue": "false",
+        "persistent": false,
+        "native": false
       }
     ],
     "structures": [],
@@ -132,7 +140,7 @@
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "SwitchToHome"
+      "name": "switchToHome"
     },
     {
       "objID": "5de06a9c-c3e2-4280-b4b3-684adba35c87",
@@ -149,6 +157,22 @@
       "localVariables": [],
       "userProperties": [],
       "name": "setCanChConfig"
+    },
+    {
+      "objID": "1c5968a9-6c63-4983-e7c4-7912fdd3af3f",
+      "components": [],
+      "connectionLines": [],
+      "localVariables": [],
+      "userProperties": [],
+      "name": "switchToCanLogging"
+    },
+    {
+      "objID": "c0cf2be2-ac72-48f2-ea62-0041cccd251b",
+      "components": [],
+      "connectionLines": [],
+      "localVariables": [],
+      "userProperties": [],
+      "name": "setCanLoggingStartStop"
     }
   ],
   "userPages": [
@@ -358,9 +382,9 @@
                 {
                   "objID": "57a605d6-a31e-4b0b-a0e5-297941159417",
                   "type": "LVGLLabelWidget",
-                  "left": 394,
+                  "left": 378,
                   "top": 6,
-                  "width": 48,
+                  "width": 74,
                   "height": 17,
                   "customInputs": [],
                   "customOutputs": [],
@@ -372,7 +396,7 @@
                   },
                   "timeline": [],
                   "eventHandlers": [],
-                  "identifier": "label_hp_1",
+                  "identifier": "label_hp_time",
                   "leftUnit": "px",
                   "topUnit": "px",
                   "widthUnit": "content",
@@ -401,7 +425,7 @@
                   },
                   "group": "",
                   "groupIndex": 0,
-                  "text": "00:00",
+                  "text": "00:00:00",
                   "textType": "literal",
                   "longMode": "WRAP",
                   "recolor": false
@@ -501,7 +525,15 @@
                 "childStyles": []
               },
               "timeline": [],
-              "eventHandlers": [],
+              "eventHandlers": [
+                {
+                  "objID": "7e526431-034e-4e2e-9144-c73b6bbb2c69",
+                  "eventName": "PRESSED",
+                  "handlerType": "action",
+                  "action": "switchToCanLogging",
+                  "userData": 0
+                }
+              ],
               "identifier": "button_hp",
               "leftUnit": "px",
               "topUnit": "px",
@@ -1732,57 +1764,6 @@
                   "recolor": false
                 },
                 {
-                  "objID": "fdff2220-b503-4a82-cc6b-937b6c039281",
-                  "type": "LVGLLabelWidget",
-                  "left": 394,
-                  "top": 6,
-                  "width": 48,
-                  "height": 17,
-                  "customInputs": [],
-                  "customOutputs": [],
-                  "style": {
-                    "objID": "38ea32e5-9d44-4138-e270-702353553508",
-                    "useStyle": "default",
-                    "conditionalStyles": [],
-                    "childStyles": []
-                  },
-                  "timeline": [],
-                  "eventHandlers": [],
-                  "identifier": "label_sp_1",
-                  "leftUnit": "px",
-                  "topUnit": "px",
-                  "widthUnit": "content",
-                  "heightUnit": "content",
-                  "children": [],
-                  "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
-                  "hiddenFlagType": "literal",
-                  "clickableFlagType": "literal",
-                  "flagScrollbarMode": "",
-                  "flagScrollDirection": "",
-                  "scrollSnapX": "",
-                  "scrollSnapY": "",
-                  "checkedStateType": "literal",
-                  "disabledStateType": "literal",
-                  "states": "",
-                  "localStyles": {
-                    "objID": "3325f9e3-d1ce-4176-bf4d-f777d550f5cb",
-                    "definition": {
-                      "MAIN": {
-                        "DEFAULT": {
-                          "text_color": "#ffffff",
-                          "text_font": "montserrant_bold_16"
-                        }
-                      }
-                    }
-                  },
-                  "group": "",
-                  "groupIndex": 0,
-                  "text": "00:00",
-                  "textType": "literal",
-                  "longMode": "WRAP",
-                  "recolor": false
-                },
-                {
                   "objID": "8281b631-c5ae-4631-f310-dda9374fe6db",
                   "type": "LVGLImgbuttonWidget",
                   "left": -8,
@@ -1803,7 +1784,7 @@
                       "objID": "2261374e-1175-4710-b6f4-a30066e0dc15",
                       "eventName": "PRESSED",
                       "handlerType": "action",
-                      "action": "SwitchToHome",
+                      "action": "switchToHome",
                       "userData": 0
                     }
                   ],
@@ -2299,57 +2280,6 @@
                   "group": "",
                   "groupIndex": 0,
                   "text": "CAN CHANNEL SETTING",
-                  "textType": "literal",
-                  "longMode": "WRAP",
-                  "recolor": false
-                },
-                {
-                  "objID": "316e569b-d51e-4ec6-c394-43d31d9f5c08",
-                  "type": "LVGLLabelWidget",
-                  "left": 394,
-                  "top": 6,
-                  "width": 48,
-                  "height": 17,
-                  "customInputs": [],
-                  "customOutputs": [],
-                  "style": {
-                    "objID": "4288678e-8d5b-41f4-c735-bff4c5b4ce89",
-                    "useStyle": "default",
-                    "conditionalStyles": [],
-                    "childStyles": []
-                  },
-                  "timeline": [],
-                  "eventHandlers": [],
-                  "identifier": "label_cp_1",
-                  "leftUnit": "px",
-                  "topUnit": "px",
-                  "widthUnit": "content",
-                  "heightUnit": "content",
-                  "children": [],
-                  "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
-                  "hiddenFlagType": "literal",
-                  "clickableFlagType": "literal",
-                  "flagScrollbarMode": "",
-                  "flagScrollDirection": "",
-                  "scrollSnapX": "",
-                  "scrollSnapY": "",
-                  "checkedStateType": "literal",
-                  "disabledStateType": "literal",
-                  "states": "",
-                  "localStyles": {
-                    "objID": "f55864f3-7ec1-4b74-cf1f-b219df8ec43e",
-                    "definition": {
-                      "MAIN": {
-                        "DEFAULT": {
-                          "text_color": "#ffffff",
-                          "text_font": "montserrant_bold_16"
-                        }
-                      }
-                    }
-                  },
-                  "group": "",
-                  "groupIndex": 0,
-                  "text": "00:00",
                   "textType": "literal",
                   "longMode": "WRAP",
                   "recolor": false
@@ -2856,7 +2786,7 @@
               "scrollSnapY": "",
               "checkedState": false,
               "checkedStateType": "literal",
-              "disabledState": true,
+              "disabledState": false,
               "disabledStateType": "literal",
               "states": "",
               "localStyles": {
@@ -2892,6 +2822,423 @@
       "localVariables": [],
       "userProperties": [],
       "name": "CAN",
+      "left": 0,
+      "top": 0,
+      "width": 480,
+      "height": 320,
+      "isUsedAsUserWidget": false,
+      "createAtStart": true,
+      "deleteOnScreenUnload": false
+    },
+    {
+      "objID": "660b7b89-a886-455c-d7dc-0c0f827e1acd",
+      "components": [
+        {
+          "objID": "d1aded5f-1a28-4139-9d70-7c6f8857be17",
+          "type": "LVGLScreenWidget",
+          "left": 0,
+          "top": 0,
+          "width": 480,
+          "height": 320,
+          "customInputs": [],
+          "customOutputs": [],
+          "style": {
+            "objID": "4b8142aa-f3fa-42e4-8abb-766be7a51ef1",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "timeline": [],
+          "eventHandlers": [
+            {
+              "objID": "f1cee182-324e-4781-ac7f-bf7210d1ec8c",
+              "eventName": "PRESSED",
+              "handlerType": "action",
+              "action": "setCanLoggingStartStop",
+              "userData": 0
+            }
+          ],
+          "leftUnit": "px",
+          "topUnit": "px",
+          "widthUnit": "px",
+          "heightUnit": "px",
+          "children": [
+            {
+              "objID": "ec1d7a3d-e721-4614-f9bb-8ee24cb838f4",
+              "type": "LVGLPanelWidget",
+              "left": 0,
+              "top": 0,
+              "width": 480,
+              "height": 60,
+              "customInputs": [],
+              "customOutputs": [],
+              "style": {
+                "objID": "4c361784-6f31-443a-d599-d7d9ed17547d",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "timeline": [],
+              "eventHandlers": [],
+              "identifier": "panel_Canlogger_Title",
+              "leftUnit": "px",
+              "topUnit": "px",
+              "widthUnit": "px",
+              "heightUnit": "px",
+              "children": [
+                {
+                  "objID": "432088ff-1c59-4492-c8f5-d1a6972922d7",
+                  "type": "LVGLLabelWidget",
+                  "left": 175,
+                  "top": 3,
+                  "width": 137,
+                  "height": 23,
+                  "customInputs": [],
+                  "customOutputs": [],
+                  "style": {
+                    "objID": "6ecf8573-c5b3-46d3-b3ff-8869c5aa9e6e",
+                    "useStyle": "default",
+                    "conditionalStyles": [],
+                    "childStyles": []
+                  },
+                  "timeline": [],
+                  "eventHandlers": [],
+                  "identifier": "label_canlogger_title",
+                  "leftUnit": "px",
+                  "topUnit": "px",
+                  "widthUnit": "content",
+                  "heightUnit": "content",
+                  "children": [],
+                  "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+                  "hiddenFlagType": "literal",
+                  "clickableFlagType": "literal",
+                  "flagScrollbarMode": "",
+                  "flagScrollDirection": "",
+                  "scrollSnapX": "",
+                  "scrollSnapY": "",
+                  "checkedStateType": "literal",
+                  "disabledStateType": "literal",
+                  "states": "",
+                  "localStyles": {
+                    "objID": "95b9b119-32dc-4f7d-c1f7-41576f34d19e",
+                    "definition": {
+                      "MAIN": {
+                        "DEFAULT": {
+                          "text_color": "#ffffff",
+                          "text_font": "montserrat_bold_22"
+                        }
+                      }
+                    }
+                  },
+                  "group": "",
+                  "groupIndex": 0,
+                  "text": "CAN Logger",
+                  "textType": "literal",
+                  "longMode": "WRAP",
+                  "recolor": false
+                },
+                {
+                  "objID": "a478b6a5-0bed-4d51-b509-cced1a4c262b",
+                  "type": "LVGLImgbuttonWidget",
+                  "left": -8,
+                  "top": -18,
+                  "width": 64,
+                  "height": 64,
+                  "customInputs": [],
+                  "customOutputs": [],
+                  "style": {
+                    "objID": "6aa16e37-d340-452d-f99f-f5c92049f855",
+                    "useStyle": "default",
+                    "conditionalStyles": [],
+                    "childStyles": []
+                  },
+                  "timeline": [],
+                  "eventHandlers": [
+                    {
+                      "objID": "da6636fb-527f-48b7-eeb8-5ac2550d880d",
+                      "eventName": "PRESSED",
+                      "handlerType": "action",
+                      "action": "switchToHome",
+                      "userData": 0
+                    }
+                  ],
+                  "identifier": "iconbutton_canlogger_home",
+                  "leftUnit": "px",
+                  "topUnit": "px",
+                  "widthUnit": "content",
+                  "heightUnit": "px",
+                  "children": [],
+                  "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+                  "hiddenFlagType": "literal",
+                  "clickableFlag": true,
+                  "clickableFlagType": "literal",
+                  "flagScrollbarMode": "",
+                  "flagScrollDirection": "",
+                  "scrollSnapX": "",
+                  "scrollSnapY": "",
+                  "checkedStateType": "literal",
+                  "disabledStateType": "literal",
+                  "states": "",
+                  "localStyles": {
+                    "objID": "50135937-de55-43e6-9d38-6b917ab28ca5"
+                  },
+                  "group": "",
+                  "groupIndex": 0,
+                  "imageReleased": "home_icon",
+                  "imagePressed": "home_pressed"
+                }
+              ],
+              "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+              "hiddenFlagType": "literal",
+              "clickableFlag": true,
+              "clickableFlagType": "literal",
+              "flagScrollbarMode": "",
+              "flagScrollDirection": "",
+              "scrollSnapX": "",
+              "scrollSnapY": "",
+              "checkedStateType": "literal",
+              "disabledStateType": "literal",
+              "states": "",
+              "localStyles": {
+                "objID": "af292d08-d588-42b6-db8e-577f2530fbf3",
+                "definition": {
+                  "MAIN": {
+                    "DEFAULT": {
+                      "radius": 0,
+                      "bg_color": "#002dbf",
+                      "bg_grad_dir": "HOR",
+                      "bg_grad_color": "#487cd1",
+                      "border_width": 0
+                    }
+                  }
+                }
+              },
+              "group": "",
+              "groupIndex": 0
+            },
+            {
+              "objID": "e178aed3-32cd-4ef3-a734-531522c8899e",
+              "type": "LVGLTextareaWidget",
+              "left": 8,
+              "top": 193,
+              "width": 464,
+              "height": 117,
+              "customInputs": [],
+              "customOutputs": [],
+              "style": {
+                "objID": "b3940a24-f997-443b-b4c7-8239f037d116",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "timeline": [],
+              "eventHandlers": [],
+              "identifier": "TA_CanLogger_Console",
+              "leftUnit": "px",
+              "topUnit": "px",
+              "widthUnit": "px",
+              "heightUnit": "px",
+              "children": [],
+              "widgetFlags": "GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_ON_FOCUS|SNAPPABLE",
+              "hiddenFlagType": "literal",
+              "clickableFlag": true,
+              "clickableFlagType": "literal",
+              "flagScrollbarMode": "",
+              "flagScrollDirection": "",
+              "scrollSnapX": "",
+              "scrollSnapY": "",
+              "checkedStateType": "literal",
+              "disabledStateType": "literal",
+              "states": "",
+              "localStyles": {
+                "objID": "1535f008-650f-4080-bbc0-9892a19e39bc"
+              },
+              "group": "",
+              "groupIndex": 0,
+              "text": "",
+              "textType": "literal",
+              "placeholder": "",
+              "oneLineMode": false,
+              "passwordMode": false,
+              "acceptedCharacters": "",
+              "maxTextLength": 1024
+            },
+            {
+              "objID": "c4651d74-e742-4b16-a963-c1cbfc6f2fdc",
+              "type": "LVGLLabelWidget",
+              "left": 11,
+              "top": 170,
+              "width": 89,
+              "height": 16,
+              "customInputs": [],
+              "customOutputs": [],
+              "style": {
+                "objID": "9204a0f4-e69e-4347-e25f-ef85129116a1",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "timeline": [],
+              "eventHandlers": [],
+              "identifier": "label_CanLogger_Console",
+              "leftUnit": "px",
+              "topUnit": "px",
+              "widthUnit": "content",
+              "heightUnit": "content",
+              "children": [],
+              "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+              "hiddenFlagType": "literal",
+              "clickableFlagType": "literal",
+              "flagScrollbarMode": "",
+              "flagScrollDirection": "",
+              "scrollSnapX": "",
+              "scrollSnapY": "",
+              "checkedStateType": "literal",
+              "disabledStateType": "literal",
+              "states": "",
+              "localStyles": {
+                "objID": "cb0cbe6d-da6d-4ebf-847b-104e69b54575"
+              },
+              "group": "",
+              "groupIndex": 0,
+              "text": "Log Console",
+              "textType": "literal",
+              "longMode": "WRAP",
+              "recolor": false
+            },
+            {
+              "objID": "acba17e7-1672-4fc0-d61b-2b3c87476717",
+              "type": "LVGLButtonWidget",
+              "left": 165,
+              "top": 92,
+              "width": 150,
+              "height": 68,
+              "customInputs": [],
+              "customOutputs": [],
+              "style": {
+                "objID": "1f426146-e0a2-4d53-a0a3-c7d75cab90be",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "timeline": [],
+              "eventHandlers": [
+                {
+                  "objID": "d212aa2f-20bb-48d3-d253-addc8735367d",
+                  "eventName": "PRESSED",
+                  "handlerType": "action",
+                  "action": "setCanLoggingStartStop",
+                  "userData": 0
+                }
+              ],
+              "identifier": "button_Canlogging_StartStop",
+              "leftUnit": "px",
+              "topUnit": "px",
+              "widthUnit": "px",
+              "heightUnit": "px",
+              "children": [
+                {
+                  "objID": "1666a0d6-c6d5-4f19-eb1f-7abea594b49b",
+                  "type": "LVGLLabelWidget",
+                  "left": 0,
+                  "top": 0,
+                  "width": 100,
+                  "height": 16,
+                  "customInputs": [],
+                  "customOutputs": [],
+                  "style": {
+                    "objID": "75c0da61-6877-48e8-a36a-9fdfd4a12267",
+                    "useStyle": "default",
+                    "conditionalStyles": [],
+                    "childStyles": []
+                  },
+                  "timeline": [],
+                  "eventHandlers": [],
+                  "identifier": "label_Canlogging_StartStop",
+                  "leftUnit": "px",
+                  "topUnit": "px",
+                  "widthUnit": "content",
+                  "heightUnit": "content",
+                  "children": [],
+                  "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+                  "hiddenFlagType": "literal",
+                  "clickableFlagType": "literal",
+                  "flagScrollbarMode": "",
+                  "flagScrollDirection": "",
+                  "scrollSnapX": "",
+                  "scrollSnapY": "",
+                  "checkedStateType": "literal",
+                  "disabledStateType": "literal",
+                  "states": "",
+                  "localStyles": {
+                    "objID": "2aba0773-c383-44c3-d85f-8960234f87a6",
+                    "definition": {
+                      "MAIN": {
+                        "DEFAULT": {
+                          "align": "CENTER"
+                        }
+                      }
+                    }
+                  },
+                  "group": "",
+                  "groupIndex": 0,
+                  "text": "Start Logging",
+                  "textType": "literal",
+                  "longMode": "WRAP",
+                  "recolor": false
+                }
+              ],
+              "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_ON_FOCUS|SCROLL_WITH_ARROW|SNAPPABLE",
+              "hiddenFlagType": "literal",
+              "clickableFlag": true,
+              "clickableFlagType": "literal",
+              "flagScrollbarMode": "",
+              "flagScrollDirection": "",
+              "scrollSnapX": "",
+              "scrollSnapY": "",
+              "checkedStateType": "literal",
+              "disabledStateType": "literal",
+              "states": "",
+              "localStyles": {
+                "objID": "c020dbf0-d150-425a-ee18-5c1aa8eb0ecd",
+                "definition": {
+                  "MAIN": {
+                    "DEFAULT": {
+                      "bg_color": "#002dbf",
+                      "bg_grad_color": "#487cd1",
+                      "bg_grad_dir": "HOR"
+                    }
+                  }
+                }
+              },
+              "group": "",
+              "groupIndex": 0
+            }
+          ],
+          "widgetFlags": "CLICKABLE|PRESS_LOCK|CLICK_FOCUSABLE|GESTURE_BUBBLE|SNAPPABLE|SCROLLABLE|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER",
+          "hiddenFlagType": "literal",
+          "clickableFlag": true,
+          "clickableFlagType": "literal",
+          "checkedStateType": "literal",
+          "disabledStateType": "literal",
+          "states": "",
+          "localStyles": {
+            "objID": "7bbbd4bf-e38e-4f36-99db-d048204e42db",
+            "definition": {
+              "MAIN": {
+                "DEFAULT": {
+                  "bg_color": "#bac4e1"
+                }
+              }
+            }
+          },
+          "groupIndex": 0
+        }
+      ],
+      "connectionLines": [],
+      "localVariables": [],
+      "userProperties": [],
+      "name": "Can_logger",
       "left": 0,
       "top": 0,
       "width": 480,
