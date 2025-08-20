@@ -1,7 +1,6 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[Can_Analyzer.eez-project]:/userPages/1",
-    "selectedUserWidgetObject": "[Can_Analyzer.eez-project]:/userWidgets/-1",
+    "selectedUserPageObject": "[Can_Analyzer.eez-project]:/userPages/3",
     "selectedActionObject": "[Can_Analyzer.eez-project]:/actions/3",
     "selectedGlobalVariableObject": "[Can_Analyzer.eez-project]:/variables/globalVariables/2",
     "selectedFontObject": "[Can_Analyzer.eez-project]:/fonts/0",
@@ -124,7 +123,7 @@
             {
               "type": "row",
               "id": "#846446d6-968a-4c93-9cfc-758478c59d79",
-              "weight": 27.021555684735635,
+              "weight": 14.503492329646946,
               "children": [
                 {
                   "type": "tabset",
@@ -195,10 +194,21 @@
             {
               "type": "tabset",
               "id": "EDITORS",
-              "weight": 42.40182759984106,
+              "weight": 48.2610377007988,
               "enableDeleteWhenEmpty": false,
               "enableClose": false,
               "children": [
+                {
+                  "type": "tab",
+                  "id": "#ecfa0783-e82f-4a00-b6e7-866541070d22",
+                  "name": "CAN",
+                  "component": "editor",
+                  "config": {
+                    "objectPath": "[Can_Analyzer.eez-project]:/userPages/3",
+                    "permanent": false
+                  },
+                  "icon": "svg:page"
+                },
                 {
                   "type": "tab",
                   "id": "#c4b9fb4a-fe12-4269-9e8d-38cc34ffc815",
@@ -206,7 +216,7 @@
                   "component": "editor",
                   "config": {
                     "objectPath": "[Can_Analyzer.eez-project]:/userPages/1",
-                    "permanent": false
+                    "permanent": true
                   },
                   "icon": "svg:page"
                 },
@@ -227,7 +237,7 @@
             {
               "type": "row",
               "id": "#3f79ce1e-5ec5-4e7a-93da-8ed9bc481f79",
-              "weight": 30.576616715423242,
+              "weight": 37.235469969554195,
               "children": [
                 {
                   "type": "tabset",
@@ -1038,7 +1048,7 @@
           "x": -240,
           "y": -160
         },
-        "scale": 1
+        "scale": 0.5
       },
       "timeline": {
         "isEditorActive": false,
@@ -1060,10 +1070,10 @@
       },
       "transform": {
         "translate": {
-          "x": -233.53636363636357,
-          "y": -125.58885314633136
+          "x": -132.92531282979039,
+          "y": -138.02523993013773
         },
-        "scale": 1
+        "scale": 0.75
       },
       "timeline": {
         "isEditorActive": false,
@@ -1080,17 +1090,15 @@
           },
           "1": {},
           "2": {},
-          "9": {
-            "$selected": true
-          }
+          "9": {}
         }
       },
       "transform": {
         "translate": {
-          "x": -240,
-          "y": -160
+          "x": -115.19227275046103,
+          "y": -171.61938998818877
         },
-        "scale": 1
+        "scale": 0.75
       },
       "timeline": {
         "isEditorActive": false,
@@ -1111,7 +1119,7 @@
           "x": -240,
           "y": -160
         },
-        "scale": 1
+        "scale": 0.75
       },
       "timeline": {
         "isEditorActive": false,
@@ -1152,10 +1160,11 @@
   "lvglPart": "MAIN",
   "lvglState": "DEFAULT",
   "lvglExpandedPropertiesGroup": [
-    "POSITION AND SIZE"
+    "POSITION AND SIZE",
+    "TEXT"
   ],
   "showInactiveFlowsInDebugger": true,
   "globalFlowZoom": true,
-  "flowZoom": 1,
+  "flowZoom": 0.75,
   "implementationLanguage": "C"
 }
