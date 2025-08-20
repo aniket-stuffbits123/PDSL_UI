@@ -1080,15 +1080,25 @@
           },
           "1": {},
           "2": {},
+<<<<<<< Updated upstream
           "9": {
+=======
+          "9": {},
+          "12": {
+>>>>>>> Stashed changes
             "$selected": true
           }
         }
       },
       "transform": {
         "translate": {
+<<<<<<< Updated upstream
           "x": -240,
           "y": -160
+=======
+          "x": -115.19227275046103,
+          "y": 28.3806100118112
+>>>>>>> Stashed changes
         },
         "scale": 1
       },

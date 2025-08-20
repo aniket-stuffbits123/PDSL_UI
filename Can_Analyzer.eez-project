@@ -1075,8 +1075,8 @@
                   "type": "LVGLLedWidget",
                   "left": 81,
                   "top": 7,
-                  "width": 10,
-                  "height": 10,
+                  "width": 15,
+                  "height": 15,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -1119,7 +1119,7 @@
                   "groupIndex": 0,
                   "color": "#ff0000",
                   "colorType": "literal",
-                  "brightness": 255,
+                  "brightness": 200,
                   "brightnessType": "literal"
                 }
               ],
@@ -1230,8 +1230,8 @@
                   "type": "LVGLLedWidget",
                   "left": 81,
                   "top": 7,
-                  "width": 10,
-                  "height": 10,
+                  "width": 15,
+                  "height": 15,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -1274,7 +1274,7 @@
                   "groupIndex": 0,
                   "color": "#ff0000",
                   "colorType": "literal",
-                  "brightness": 255,
+                  "brightness": 200,
                   "brightnessType": "literal"
                 }
               ],
@@ -1385,8 +1385,8 @@
                   "type": "LVGLLedWidget",
                   "left": 81,
                   "top": 7,
-                  "width": 10,
-                  "height": 10,
+                  "width": 15,
+                  "height": 15,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -1429,7 +1429,7 @@
                   "groupIndex": 0,
                   "color": "#ff0000",
                   "colorType": "literal",
-                  "brightness": 255,
+                  "brightness": 200,
                   "brightnessType": "literal"
                 }
               ],
@@ -1540,8 +1540,8 @@
                   "type": "LVGLLedWidget",
                   "left": 81,
                   "top": 7,
-                  "width": 10,
-                  "height": 10,
+                  "width": 15,
+                  "height": 15,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -1584,7 +1584,7 @@
                   "groupIndex": 0,
                   "color": "#ff0000",
                   "colorType": "literal",
-                  "brightness": 255,
+                  "brightness": 200,
                   "brightnessType": "literal"
                 }
               ],
