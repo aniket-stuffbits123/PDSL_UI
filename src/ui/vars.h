@@ -15,19 +15,19 @@ extern "C" {
 // Flow global variables
 
 enum FlowGlobalVariables {
-    FLOW_GLOBAL_VARIABLE_IS_LOGGER_START = 0,
-    FLOW_GLOBAL_VARIABLE_CHANNEL_SELECT = 1,
-    FLOW_GLOBAL_VARIABLE_VIEW_LOGS = 2
+    FLOW_GLOBAL_VARIABLE_IS_CH_FD = 0,
+    FLOW_GLOBAL_VARIABLE_IS_CANLOGGING_ENABLED = 1,
+    FLOW_GLOBAL_VARIABLE_LED_TOGGLE = 2
 };
 
 // Native global variables
 
-extern bool get_var_is_logger_start();
-extern void set_var_is_logger_start(bool value);
-extern int32_t get_var_channel_select();
-extern void set_var_channel_select(int32_t value);
-extern int32_t get_var_view_logs();
-extern void set_var_view_logs(int32_t value);
+extern bool get_var_is_ch_fd();
+extern void set_var_is_ch_fd(bool value);
+extern bool get_var_is_canlogging_enabled();
+extern void set_var_is_canlogging_enabled(bool value);
+extern bool get_var_led_toggle();
+extern void set_var_led_toggle(bool value);
 
 
 #ifdef __cplusplus
