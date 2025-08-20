@@ -2901,7 +2901,7 @@
               },
               "timeline": [],
               "eventHandlers": [],
-              "identifier": "CB_CanFdEnable_1",
+              "identifier": "CB_CanCHEnable",
               "leftUnit": "px",
               "topUnit": "px",
               "widthUnit": "content",
