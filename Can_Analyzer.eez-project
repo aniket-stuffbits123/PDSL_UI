@@ -3261,7 +3261,7 @@
                 {
                   "objID": "432088ff-1c59-4492-c8f5-d1a6972922d7",
                   "type": "LVGLLabelWidget",
-                  "left": 175,
+                  "left": 153,
                   "top": 3,
                   "width": 137,
                   "height": 23,
@@ -3392,9 +3392,15 @@
               "objID": "e178aed3-32cd-4ef3-a734-531522c8899e",
               "type": "LVGLTextareaWidget",
               "left": 8,
+<<<<<<< Updated upstream
               "top": 160,
               "width": 464,
               "height": 150,
+=======
+              "top": 104,
+              "width": 464,
+              "height": 206,
+>>>>>>> Stashed changes
               "customInputs": [],
               "customOutputs": [],
               "style": {
@@ -3438,8 +3444,13 @@
             {
               "objID": "c4651d74-e742-4b16-a963-c1cbfc6f2fdc",
               "type": "LVGLLabelWidget",
+<<<<<<< Updated upstream
               "left": 11,
               "top": 136,
+=======
+              "left": 8,
+              "top": 72,
+>>>>>>> Stashed changes
               "width": 89,
               "height": 16,
               "customInputs": [],
@@ -3481,10 +3492,17 @@
             {
               "objID": "acba17e7-1672-4fc0-d61b-2b3c87476717",
               "type": "LVGLButtonWidget",
+<<<<<<< Updated upstream
               "left": 165,
               "top": 65,
               "width": 150,
               "height": 48,
+=======
+              "left": 341,
+              "top": 11,
+              "width": 123,
+              "height": 39,
+>>>>>>> Stashed changes
               "customInputs": [],
               "customOutputs": [],
               "style": {
@@ -3547,7 +3565,8 @@
                     "definition": {
                       "MAIN": {
                         "DEFAULT": {
-                          "align": "CENTER"
+                          "align": "CENTER",
+                          "text_color": "#0e4090"
                         }
                       }
                     }
@@ -3576,9 +3595,7 @@
                 "definition": {
                   "MAIN": {
                     "DEFAULT": {
-                      "bg_color": "#002dbf",
-                      "bg_grad_color": "#487cd1",
-                      "bg_grad_dir": "HOR"
+                      "bg_color": "#ffff"
                     }
                   }
                 }
@@ -5732,7 +5749,11 @@
                   },
                   "timeline": [],
                   "eventHandlers": [],
+<<<<<<< Updated upstream
                   "identifier": "label_canlogger_title",
+=======
+                  "identifier": "label_linlogger_title",
+>>>>>>> Stashed changes
                   "leftUnit": "px",
                   "topUnit": "px",
                   "widthUnit": "content",
